@@ -5,7 +5,7 @@ export default function NavBar() {
     <div className='  flex  h-[70px] items-center bg-indigo-800 justify-between px-8 py-6 ' >
   <span className="text-white font-bold"> Beaches Chat</span>
   <div className=" flex gap-1 ">
-    <img src="" alt=""/>
+    <img src="" alt="hola"/>
     <span className="text-white font-bold"> Jonh</span>
     <button className='p-1 bg-white'>Logout</button>
   </div>
