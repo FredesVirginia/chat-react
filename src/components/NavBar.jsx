@@ -6,7 +6,7 @@ export default function NavBar() {
   <span className="text-white font-bold"> Beaches Chat</span>
   <div className=" flex gap-3 justify-center ">
     <img className='w-[25px] rounded-full' src={Perfil} alt=""/>
-    <span className="text-1xl text-white font-bold"> Jonh</span>
+    <span className="text-1xl text-gray-400 font-bold"> Jonh</span>
     <button className='px-2 bg-indigo-500 text-white'>Logout</button>
   </div>
 </div>
