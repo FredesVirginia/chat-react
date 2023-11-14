@@ -2,7 +2,7 @@ import React from 'react'
 import Mujer from "../img/mujer.png"
 export default function SearchBar() {
   return (
-    <div className='border border-b-gray-800'>
+    <div className='border border-b-gray-300'>
       <div className='p-2'>
         <input  placeholder='find user' class="border-transparent bg-indigo-600  " type='text' />
       </div>
