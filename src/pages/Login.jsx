@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Login() {
   return (
-    <div className='py-10   m-auto w-[400px] h-[340px] bg-white flex justify-center content-center'>
-    <div>
+    <div className=' flex justify-center items-center min-h-screen'>
+    <div  className="p-10   m-auto w-[400px] h-[340px] bg-white">
        <h1 className='text-2xl font-bold text-center'>Beaches Chat</h1>
       <h2 className='text-center'> Login</h2>
       <form className="grid gap-8">
