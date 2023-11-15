@@ -4,10 +4,12 @@ import {signOut } from "firebase/auth";
 import {auth } from "../firebase";
 import {useNavigate} from "react-router-dom";
 import toast from 'react-hot-toast';
-
+import {AuthContext} from "../context/AuthContext";
 
 export default function NavBar() {
   const navigate = useNavigate();
+  const {currentUser} = useContext(AuthContext);
+
   const handleSignOut = async () => {
     try {
       await signOut(auth);
@@ -36,8 +38,8 @@ export default function NavBar() {
     <div className='  flex  h-[70px] items-center bg-indigo-800 justify-between px-3 py-4 ' >
   <span className="text-white font-bold"> Beaches Chat</span>
   <div className=" flex gap-3 justify-center ">
-    <img className='w-[25px] rounded-full' src={Perfil} alt=""/>
-    <span className="text-1xl text-gray-400 font-bold"> Jonh</span>
+    <img className='w-[25px] rounded-full' src={currentUser.photoURL} alt=""/>
+    <span className="text-1xl text-gray-400 font-bold"> {currentUser.displayName}</span>
 
     <button className='px-2 bg-indigo-500 text-white'
       onClick={handleSignOut}
