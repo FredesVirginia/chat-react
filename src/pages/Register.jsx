@@ -4,7 +4,7 @@ import {auth , storage , db} from "../firebase";
 import {  createUserWithEmailAndPassword , updateProfile } from "firebase/auth";
 import { getStorage ,ref, uploadBytesResumable , getDownloadURL} from "firebase/storage"
 import {doc , setDoc} from "firebase/firestore";
-import {useNavigate} from "react-router-dom";
+import {useNavigate , Link} from "react-router-dom";
 import toast from 'react-hot-toast';
 export default function Register() {
   const [error , setError] = useState(false);
@@ -91,7 +91,7 @@ export default function Register() {
           <button className='bg-indigo-400 p-2 font-bold text-white'> Sign Up</button>
         </form>
         {error && <span> Oh Algo salio Mal </span>}
-        <p className='text-center my-4'>You do have an Account? Login</p>
+        <p className='text-center my-4'>You do have an Account? <Link to="/login"> Login </Link></p>
       </div>
     </div>
   )
