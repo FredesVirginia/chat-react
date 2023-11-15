@@ -5,27 +5,34 @@ import Home from "./pages/Home";
 import { Toaster } from 'react-hot-toast';
 import {useContext} from "react";
 import {AuthContext} from "./context/AuthContext"
+import {useState} from "react";
+import toast from "react-hot-toast";
 import {
   BrowserRouter, 
   Routes ,
   Route , 
   Navigate,
-  useNavigate
+ 
 } from "react-router-dom";
 
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { currentUser, authLoading } = useContext(AuthContext);
+  
  console.log("EL user es " , currentUser)
-  const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    }
+ const ProtectedRoute = ({ children }) => {
+  if (authLoading) {
+    return <div className="flex justify-center items-center">
+      <h1 className=" mt-[200px] text-2xl">Autenticando...</h1>
+    </div>
+  }
 
-    return children
-  };
+  if (!currentUser) {
+    return <Navigate to="/login" />;
+  }
 
+  return children;
+};
 
 
   return (
